@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt4ixp5g1g6nr"]
+
+[ext_resource type="Texture2D" uid="uid://bxy6xikilx473" path="res://TestImages/square.png" id="1_w52vq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c67ir"]
+size = Vector2(575, 650)
+
+[node name="area2d_instance" type="Area2D"]
+gravity_space_override = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 0.219608)
+scale = Vector2(5.7, 6.5)
+texture = ExtResource("1_w52vq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_c67ir")

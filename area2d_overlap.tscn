@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq1uj5406pdv4"]
+
+[ext_resource type="Script" path="res://area2d_overlap.gd" id="1_y12o5"]
+[ext_resource type="PackedScene" uid="uid://dt4ixp5g1g6nr" path="res://area2d_instance.tscn" id="2_ou1yw"]
+
+[node name="area2d_overlap" type="Node2D"]
+script = ExtResource("1_y12o5")
+
+[node name="area2d_instance" parent="." instance=ExtResource("2_ou1yw")]
+position = Vector2(500, 300)
+scale = Vector2(0.5, 0.5)

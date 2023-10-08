@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0idkm002bhue"]
+
+[ext_resource type="Script" path="res://area_2d_bug_demo_v2.gd" id="1_2ivr3"]
+[ext_resource type="Texture2D" uid="uid://hohiwq0qqrkn" path="res://TestImages/Untitled.png" id="2_5t30b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80bid"]
+size = Vector2(1150, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_elauw"]
+size = Vector2(20, 650)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l2g6e"]
+
+[node name="Area2DBugDemo" type="Node2D"]
+script = ExtResource("1_2ivr3")
+
+[node name="Borders" type="Node2D" parent="."]
+
+[node name="North" type="StaticBody2D" parent="Borders"]
+position = Vector2(575, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/North"]
+shape = SubResource("RectangleShape2D_80bid")
+
+[node name="South" type="StaticBody2D" parent="Borders"]
+position = Vector2(0, 650)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/South"]
+position = Vector2(576.5, 0)
+shape = SubResource("RectangleShape2D_80bid")
+
+[node name="West" type="StaticBody2D" parent="Borders"]
+position = Vector2(0, 325)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/West"]
+shape = SubResource("RectangleShape2D_elauw")
+
+[node name="Center" type="StaticBody2D" parent="Borders"]
+position = Vector2(575, 325)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Center"]
+shape = SubResource("RectangleShape2D_elauw")
+
+[node name="Right" type="StaticBody2D" parent="Borders"]
+position = Vector2(1150, 325)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Right"]
+shape = SubResource("RectangleShape2D_elauw")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 4.0
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(250, 250)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_l2g6e")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("2_5t30b")
